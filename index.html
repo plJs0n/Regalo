@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080812">
+  <meta name="description" content="Una sorpresa de cumpleaños para Maria, hecha con mucho cariño.">
+  <title>Feliz cumpleaños, MARIA ♡</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+  <header><a href="./" aria-label="Volver al inicio">M<span>♡</span></a><span>UNA SORPRESA PARA TI</span><button
+      id="sound" class="playing" aria-pressed="true" aria-label="Pausar música" title="Pausar música">♫</button>
+  </header>
+  <main>
+    <section id="welcome" class="scene active">
+      <p class="eyebrow">HOY EL UNIVERSO CELEBRA CONTIGO</p>
+      <button id="start" class="gift" aria-label="Abrir sorpresa"><span class="gift-bow">♡</span><span
+          class="gift-box">✧</span></button>
+      <h1>Hay algo especial<br>para ti, <em>MI VIDA.💝</em></h1>
+      <p class="subtle">Un pequeño regalo. Un montón de cariño.</p>
+      <button class="primary" id="begin">Abre tu sorpresa <span>↗</span></button>
+    </section>
+    <section id="intro" class="scene" aria-live="polite">
+      <h2 id="intro-text">3</h2>
+    </section>
+    <section id="cake" class="scene">
+      <p class="eyebrow">ESTE MOMENTO ES SOLO TUYO</p>
+      <h2>¡Feliz cumpleaños,<br><em>MI AMOR!</em></h2>
+      <div class="cake-art" aria-label="Torta de cumpleaños con velas">
+        <div class="candles"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="icing"></div>
+        <div class="cake-layer">♡ &nbsp; ♡ &nbsp; ♡</div>
+        <div class="plate"></div>
+      </div>
+      <p class="subtle" id="wish-text">Cierra los ojos, pide un deseo…</p><button id="wish" class="primary">Sopla las
+        velitas ✧</button>
+    </section>
+    <section id="envelope" class="scene">
+      <p class="eyebrow">UNAS PALABRAS DESDE EL CORAZÓN</p><button id="open-letter" class="envelope"
+        aria-label="Abrir carta para Maria"><span>Para MARIA</span><b>♥</b></button>
+      <p class="subtle">Toca el sobre para abrir tu carta</p>
+    </section>
+    <section id="album" class="scene">
+      <p class="eyebrow">TANTOS MOMENTOS, UNA PERSONA ESPECIAL</p>
+      <div id="memory-book" class="memory-book" tabindex="0" role="region"
+        aria-label="Álbum de recuerdos. Desliza a la izquierda para avanzar y a la derecha para volver.">
+        <div class="photo-pair">
+          <figure><img id="photo-a" draggable="false" alt="Un recuerdo especial de Maria"></figure>
+          <figure><img id="photo-b" draggable="false" alt="Otro recuerdo especial de Maria"></figure>
+        </div>
+      </div>
+      <p class="swipe-hint">← Avanzar <span>Desliza las páginas</span> Volver →</p>
+      <div class="album-controls"><button id="previous" class="circle" aria-label="Fotos anteriores">←</button><span
+          id="page-number" aria-live="polite"></span><button id="next" class="circle"
+          aria-label="Fotos siguientes">→</button></div>
+      <button id="finale" class="text-button">Una última sorpresa <span>♡</span></button>
+    </section>
+    <section id="heart" class="scene">
+      <p class="eyebrow">CADA RECUERDO TIENE UN LUGAR AQUÍ</p>
+      <h2>Con todo mi <em>corazón.</em></h2>
+      <div id="photo-heart" aria-label="Corazón formado por fotos de Maria"></div>
+      <p class="heart-footer">Que la vida te regale tantas sonrisas como las que tú nos das.<br><strong>Feliz
+          cumpleaños, MARIA ♡</strong></p><button id="replay" class="text-button">Volver a vivirlo ↻</button>
+    </section>
+  </main>
+  <footer>HECHO CON CARIÑO <span>✧</span> PARA MI PRINCESA❤️</footer>
+  <p id="audio-notice" role="status"></p>
+  <audio id="music" src="assets/audio/cumple.mp3" autoplay loop preload="auto"></audio>
+</body>
+
+</html>
