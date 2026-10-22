@@ -12,7 +12,7 @@ function show(id) { document.querySelectorAll('.scene').forEach(el => el.classLi
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 function setPhoto(img, file) { img.onerror = () => { img.onerror = null; img.src = 'assets/images/placeholder.svg'; }; img.src = 'assets/images/' + file; }
 function renderAlbum() { const item = memories[page]; ['a','b'].forEach((key,i) => setPhoto($('photo-'+key), item.photos[i])); $('page-number').textContent = `${page+1} / ${memories.length}`; $('previous').disabled = page === 0; $('next').disabled = page === memories.length-1; }
-async function begin() { if(scene !== 'welcome') return; const run = ++sequence; show('intro'); if (musicEnabled) tryMusic(); for (const word of ['3','2','1','HAPPY','BIRTHDAY','MARIA']) { if(run !== sequence) return; $('intro-text').textContent = word; await delay(reduced ? 450 : 1100); } show('cake'); }
+async function begin() { if(scene !== 'welcome') return; const run = ++sequence; show('intro'); if (musicEnabled) tryMusic(); for (const word of ['3','2','1','HAPPY','BIRTHDAY','Cariño']) { if(run !== sequence) return; $('intro-text').textContent = word; await delay(reduced ? 450 : 1100); } show('cake'); }
 $('begin').onclick = begin; $('start').onclick = begin;
 $('wish').onclick = async () => { if($('cake').classList.contains('blown')) return; $('cake').classList.add('blown'); $('wish-text').textContent = 'Que todo lo bonito que deseas se haga realidad ♡'; $('wish').textContent = 'Un deseo para ti ♡'; burst(); await delay(2200); show('envelope'); };
 $('open-letter').onclick = () => {page=0;renderAlbum();show('album');};
